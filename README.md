@@ -15,7 +15,7 @@ trve_bevy_font = { git = "https://github.com/mnmaita/trve_bevy_font" }
 Remember you can also target tags, commits and branches with this method:
 
 ```toml
-trve_bevy_font = { git = "https://github.com/mnmaita/trve_bevy_font", tag = "v0.1.0" }
+trve_bevy_font = { git = "https://github.com/mnmaita/trve_bevy_font", tag = "v0.2.0" }
 ```
 
 ```toml
@@ -50,9 +50,9 @@ Certain platforms, like web, can't use `load_folder` to load assets so this libr
 ```rs
     app.insert_resource(FontAssetList::new(
         [
-            "textures/bold.ttf",
-            "textures/italic.ttf",
-            "textures/thin.ttf",
+            "typography/bold.ttf",
+            "typography/italic.ttf",
+            "typography/thin.ttf",
         ]
         .into(),
     ));
@@ -62,6 +62,7 @@ If you insert this Resource, `FontAssetFolder` will be ignored and the plugin wi
 
 ## Bevy version compatibility
 
-|trve_bevy_font|bevy|
-|---|---|
-|0.1|0.12|
+| trve_bevy_font | bevy |
+| -------------- | ---- |
+| 0.2            | 0.13 |
+| 0.1            | 0.12 |

@@ -15,7 +15,7 @@ trve_bevy_font = { git = "https://github.com/mnmaita/trve_bevy_font" }
 Remember you can also target tags, commits and branches with this method:
 
 ```toml
-trve_bevy_font = { git = "https://github.com/mnmaita/trve_bevy_font", tag = "v0.2.0" }
+trve_bevy_font = { git = "https://github.com/mnmaita/trve_bevy_font", tag = "v0.3.0" }
 ```
 
 ```toml
@@ -64,5 +64,6 @@ If you insert this Resource, `FontAssetFolder` will be ignored and the plugin wi
 
 | trve_bevy_font | bevy |
 | -------------- | ---- |
+| 0.3            | 0.14 |
 | 0.2            | 0.13 |
 | 0.1            | 0.12 |

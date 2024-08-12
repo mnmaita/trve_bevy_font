@@ -125,7 +125,7 @@ fn update_font_assets_load_state(
         }
     } else if let Some(font_folder_handle) = font_folder_handle {
         *font_load_state = asset_server
-            .recursive_dependency_load_state(font_folder_handle.clone())
+            .recursive_dependency_load_state(&font_folder_handle.0)
             .into()
     }
 }

@@ -45,20 +45,36 @@ This will load all assets from `assets/ttfs` by using `AssetServer`'s `load_fold
 
 ### Loading a list of assets
 
-Certain platforms, like web, can't use `load_folder` to load assets so this library provides an override via the `FontAssetList` Resource. This allows you to load a list of assets from your `assets` folder.
+Certain platforms, like web, can't use `load_folder` to load assets so this library provides an override via the `FontAssetList` Resource.
 
-```rs
+This allows you to load a list of assets from the folder specified in the `FontAssetFolder` Resource, within the `assets` directory.
+
+```rust
+    // This will attempt to load `assets/fonts/bold.ttf`, `assets/fonts/italic.ttf` and `assets/fonts/thin.ttf`.
     app.insert_resource(FontAssetList::new(
         [
-            "typography/bold.ttf",
-            "typography/italic.ttf",
-            "typography/thin.ttf",
+            "bold.ttf",
+            "italic.ttf",
+            "thin.ttf",
         ]
         .into(),
     ));
 ```
 
-If you insert this Resource, `FontAssetFolder` will be ignored and the plugin will only load assets based on the provided list.
+```rust
+    // This will attempt to load `assets/ttfs/bold.ttf`, `assets/ttfs/italic.ttf` and `assets/ttfs/thin.ttf`.
+    app.insert_resource(FontAssetFolder::new("ttfs"));
+    app.insert_resource(FontAssetList::new(
+        [
+            "bold.ttf",
+            "italic.ttf",
+            "thin.ttf",
+        ]
+        .into(),
+    ));
+```
+
+If you insert this Resource the plugin will **only** load the assets provided in the list.
 
 ## Bevy version compatibility
 
